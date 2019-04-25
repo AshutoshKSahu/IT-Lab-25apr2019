@@ -1,22 +1,22 @@
 <?php
 include('config.php');
-$sql="select * from employees";
+$sql="select * from emp";
 if($res=mysqli_query($conn,$sql))
 {
 	if(mysqli_num_rows($res)>0)
 	{
 		echo "<table>";
 		echo "<tr>";
-		echo "<th>FirstName</th>";
-		echo "<th>LastName</th>";
-		echo "<th>Age</th>";
+		echo "<th>name</th>";
+		echo "<th>salary</th>";
+		echo "<th>Address</th>";
 		echo "</tr>";
 		while($row=mysqli_fetch_array($res))
 		{
 			echo "<tr>";
-			echo "<td>".$row["firstname"]."</td>";
-			echo "<td>".$row["lastname"]."</td>";
-			echo "<td>".$row["age"]."</td>";
+			echo "<td>".$row["name"]."</td>";
+			echo "<td>".$row["salary"]."</td>";
+			echo "<td>".$row["address"]."</td>";
 			echo "</tr>";
 		}
 		echo "</table>";
